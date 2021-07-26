@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="app">
+    <!--界面-->
+    <!--mustache-->
+    <h1>系统名称：{{title}}</h1>
+    <ul>
+      <li v-for="item in products">
+        名称：{{item.name}}
+        <button @click="changStock(item,item.stock-1)">-</button>
+        <span>{{item.stock}}</span>
+        <button @click="changStock(item,item.stock+1)">+</button>
+      </li>
+    </ul>
+  </div>
+  <script src="js/vue.js"></script>
+  <script>
+    //定义vue对象
+    const app=new Vue({
+      el:"#app",//管理dom元素
+      data:{//数据
+        title:"库存管理系统",
+        products:[
+          {name:"iphone1",stock:10}
+        ]
+      },
+      methods:{
+        changStock(item,newStock){
+          if (newStock<0){
+            newStock = 0;
+          }
+          item.stock=newStock;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

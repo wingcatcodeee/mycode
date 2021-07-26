@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in vues">{{item}}</li>
+    </ul>
+  </div>
+  <script src="js/vue.js"></script>
+  <script>
+    //定义vue对象
+    const app=new Vue({
+      el:"#app",//管理dom元素
+      data:{//数据
+        vues:[
+          {name:"1",num:12},
+          {name:"1",num:12},
+          {name:"1",num:12}
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
